@@ -20,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.google.code.kaptcha.servlet.KaptchaServlet;
+import com.xxx.o2o.interceptor.frontend.FrontendLoginInterceptor;
 import com.xxx.o2o.interceptor.shopadmin.ShopLoginInterceptor;
 import com.xxx.o2o.interceptor.shopadmin.ShopPermissionInterceptor;
 
@@ -175,7 +176,11 @@ public class MvcConfiguration implements WebMvcConfigurer, ApplicationContextAwa
 		/** scan **/
 		permissionIR.excludePathPatterns("/shopadmin/adduserproductmap");
 		permissionIR.excludePathPatterns("/shopadmin/exchangeaward");
-		/** 超级管理员系统拦截部分 **/
-		interceptPath = "/superadmin/**";
+		/** 普通用户拦截部分 **/
+		String userInterceptPath = "/frontend/**";
+		// 注册拦截器
+		InterceptorRegistration userLoginIR = registry.addInterceptor(new FrontendLoginInterceptor());
+		// 配置拦截的路径
+		userLoginIR.addPathPatterns(userInterceptPath);
 	}
 }
