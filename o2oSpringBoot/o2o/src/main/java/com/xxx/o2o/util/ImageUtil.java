@@ -17,7 +17,7 @@ import net.coobird.thumbnailator.geometry.Positions;
 import com.xxx.o2o.dto.ImageHolder;
 
 public class ImageUtil {
-	private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+	private static String basePath = PathUtil.getImgBasePath();
 	private static final SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	private static final Random r = new Random();
 	private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
@@ -99,7 +99,7 @@ public class ImageUtil {
 		// 调用Thumbnails生成带有水印的图片
 		try {
 			Thumbnails.of(thumbnail.getImage()).size(337, 640)
-					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/xiongxinxiao/o2oSpringBoot/o2o/src/main/resources/watermark.jpg")), 0.25f)
+					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 					.outputQuality(0.9f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());

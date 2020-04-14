@@ -12,6 +12,7 @@
 	<groupId>com.xxx</groupId>
 	<artifactId>o2o</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>o2o</name>
 	<description>o2o project</description>
 
