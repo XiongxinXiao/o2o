@@ -1,7 +1,7 @@
 package com.xxx.o2o.enums;
 
 public enum ProductStateEnum {
-	OFFLINE(-1, "非法商品"), DOWN(0, "下架"), SUCCESS(1, "操作成功"), INNER_ERROR(-1001, "操作失败"), EMPTY(-1002, "商品为空");
+	OFFLINE(-1, "Invalid product"), DOWN(0, "off"), SUCCESS(1, "Success"), INNER_ERROR(-1001, "Unsuccess"), EMPTY(-1002, "Product is empty");
 
 	private int state;
 

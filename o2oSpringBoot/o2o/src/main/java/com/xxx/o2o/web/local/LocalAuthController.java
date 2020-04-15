@@ -39,7 +39,7 @@ public class LocalAuthController {
 		// 验证码校验
 		if (!CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "输入了错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 获取输入的帐号
@@ -65,7 +65,7 @@ public class LocalAuthController {
 			}
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "用户名和密码均不能为空");
+			modelMap.put("errMsg", "Username and password are required");
 		}
 		return modelMap;
 	}
@@ -83,7 +83,7 @@ public class LocalAuthController {
 		// 验证码校验
 		if (!CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "输入了错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 获取帐号
@@ -103,7 +103,7 @@ public class LocalAuthController {
 				if (localAuth == null || !localAuth.getUsername().equals(userName)) {
 					// 不一致则直接退出
 					modelMap.put("success", false);
-					modelMap.put("errMsg", "输入的帐号非本次登录的帐号");
+					modelMap.put("errMsg", "Wrong username");
 					return modelMap;
 				}
 				// 修改平台帐号的用户密码
@@ -123,7 +123,7 @@ public class LocalAuthController {
 
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请输入密码");
+			modelMap.put("errMsg", "Password is required");
 		}
 		return modelMap;
 	}
@@ -136,7 +136,7 @@ public class LocalAuthController {
 		boolean needVerify = HttpServletRequestUtil.getBoolean(request, "needVerify");
 		if (needVerify && !CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "输入了错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 获取输入的帐号
@@ -154,11 +154,11 @@ public class LocalAuthController {
 				request.getSession().setAttribute("user", localAuth.getPersonInfo());
 			} else {
 				modelMap.put("success", false);
-				modelMap.put("errMsg", "用户名或密码错误");
+				modelMap.put("errMsg", "Username or password is wrong");
 			}
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "用户名和密码均不能为空");
+			modelMap.put("errMsg", "Username and password are required");
 		}
 		return modelMap;
 	}

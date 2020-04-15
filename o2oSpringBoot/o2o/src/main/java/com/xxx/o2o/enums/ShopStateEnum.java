@@ -1,8 +1,8 @@
 package com.xxx.o2o.enums;
 
 public enum ShopStateEnum {
-	CHECK(0, "审核中"), OFFLINE(-1, "非法店铺"), SUCCESS(1, "操作成功"), PASS(2, "通过认证"), INNER_ERROR(-1001,
-			"内部系统错误"), NULL_SHOPID(-1002, "ShopId为空"),NULL_SHOP(-1003, "shop信息为空");
+	CHECK(0, "Processing"), OFFLINE(-1, "Invalid shop"), SUCCESS(1, "Success"), PASS(2, "Valid shop"), INNER_ERROR(-1001,
+			"Internal error"), NULL_SHOPID(-1002, "ShopId is empty"),NULL_SHOP(-1003, "Shop info is empty");
 	private int state;
 	private String stateInfo;
 

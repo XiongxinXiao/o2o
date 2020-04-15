@@ -1,7 +1,7 @@
 package com.xxx.o2o.enums;
 
 public enum ShopCategoryStateEnum {
-	SUCCESS(0, "创建成功"), INNER_ERROR(-1001, "操作失败"), EMPTY(-1002, "区域信息为空");
+	SUCCESS(0, "Success"), INNER_ERROR(-1001, "Unsuccess"), EMPTY(-1002, "Area info is empty");
 
 	private int state;
 

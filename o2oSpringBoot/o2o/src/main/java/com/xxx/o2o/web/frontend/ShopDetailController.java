@@ -55,7 +55,7 @@ public class ShopDetailController {
 			modelMap.put("success", true);
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "empty shopId");
+			modelMap.put("errMsg", "Empty shopId");
 		}
 		return modelMap;
 	}

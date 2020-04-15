@@ -67,7 +67,7 @@ public class ProductCategoryManagementController {
 
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请至少输入一个商品类别");
+			modelMap.put("errMsg", "Product category is required");
 		}
 		return modelMap;
 	}
@@ -95,7 +95,7 @@ public class ProductCategoryManagementController {
 
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请至少选择一个商品类别");
+			modelMap.put("errMsg", "Product category is required");
 		}
 		return modelMap;
 	}

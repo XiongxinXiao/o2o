@@ -42,7 +42,7 @@ public class ProductDetailController {
 			modelMap.put("success", true);
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "empty productId");
+			modelMap.put("errMsg", "Empty productId");
 		}
 		return modelMap;
 	}

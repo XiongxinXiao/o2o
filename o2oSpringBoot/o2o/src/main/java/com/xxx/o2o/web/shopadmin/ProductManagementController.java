@@ -50,7 +50,7 @@ public class ProductManagementController {
 		// 验证码校验
 		if (!CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "输入了错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 接收前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
@@ -66,7 +66,7 @@ public class ProductManagementController {
 				thumbnail = handleImage(request, thumbnail, productImgList);
 			} else {
 				modelMap.put("success", false);
-				modelMap.put("errMsg", "上传图片不能为空");
+				modelMap.put("errMsg", "Image is required");
 				return modelMap;
 			}
 		} catch (Exception e) {
@@ -104,7 +104,7 @@ public class ProductManagementController {
 			}
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请输入商品信息");
+			modelMap.put("errMsg", "Please input product info");
 		}
 		return modelMap;
 	}
@@ -131,7 +131,7 @@ public class ProductManagementController {
 			modelMap.put("success", true);
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "empty productId");
+			modelMap.put("errMsg", "Empty productId");
 		}
 		return modelMap;
 	}
@@ -152,7 +152,7 @@ public class ProductManagementController {
 		// 验证码判断
 		if (!statusChange && !CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "输入了错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 接收前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
@@ -203,7 +203,7 @@ public class ProductManagementController {
 
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请输入商品信息");
+			modelMap.put("errMsg", "Please input product info");
 		}
 		return modelMap;
 	}
@@ -238,7 +238,7 @@ public class ProductManagementController {
 			modelMap.put("success", true);
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "empty pageSize or pageIndex or shopId");
+			modelMap.put("errMsg", "Empty pageSize or pageIndex or shopId");
 		}
 		return modelMap;
 	}

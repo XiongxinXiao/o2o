@@ -125,7 +125,7 @@ public class ShopManagementController {
 			}
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "empty shopId");
+			modelMap.put("errMsg", "Empty shopId");
 		}
 		return modelMap;
 	}
@@ -136,7 +136,7 @@ public class ShopManagementController {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		if (!CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 1.接收并转化相应的参数，包括店铺信息以及图片信息
@@ -158,7 +158,7 @@ public class ShopManagementController {
 			shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "上传图片不能为空");
+			modelMap.put("errMsg", "Image is required");
 			return modelMap;
 		}
 		// 2.注册店铺
@@ -192,7 +192,7 @@ public class ShopManagementController {
 			return modelMap;
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请输入店铺信息");
+			modelMap.put("errMsg", "Please input shop info");
 			return modelMap;
 		}
 	}
@@ -203,7 +203,7 @@ public class ShopManagementController {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		if (!CodeUtil.checkVerifyCode(request)) {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "错误的验证码");
+			modelMap.put("errMsg", "Wrong verify code");
 			return modelMap;
 		}
 		// 1.接收并转化相应的参数，包括店铺信息以及图片信息
@@ -250,7 +250,7 @@ public class ShopManagementController {
 			return modelMap;
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "请输入店铺ID");
+			modelMap.put("errMsg", "Shop ID is required");
 			return modelMap;
 		}
 	}
