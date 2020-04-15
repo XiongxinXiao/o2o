@@ -40,7 +40,7 @@ $(function() {
 								// 获取后台返回过来的店铺类别列表
 								var shopCategoryList = data.shopCategoryList;
 								var html = '';
-								html += '<a href="#" class="button" data-category-id=""> 全部类别  </a>';
+								html += '<a href="#" class="button" data-category-id=""> All </a>';
 								// 遍历店铺类别列表，拼接出a标签集
 								shopCategoryList
 										.map(function(item, index) {
@@ -52,7 +52,7 @@ $(function() {
 										});
 								// 将拼接好的类别标签嵌入前台的html组件里
 								$('#shoplist-search-div').html(html);
-								var selectOptions = '<option value="">全部街道</option>';
+								var selectOptions = '<option value="">All Areas</option>';
 								// 获取后台返回过来的区域信息列表
 								var areaList = data.areaList;
 								// 遍历区域信息列表，拼接出option标签集
@@ -103,7 +103,7 @@ $(function() {
 							+ '</div>' + '</div>' + '<div class="card-footer">'
 							+ '<p class="color-gray">'
 							+ new Date(item.lastEditTime).Format("yyyy-MM-dd")
-							+ '更新</p>' + '<span>点击查看</span>' + '</div>'
+							+ 'Update</p>' + '<span>Detail</span>' + '</div>'
 							+ '</div>';
 				});
 				// 将卡片集合添加到目标HTML组件里

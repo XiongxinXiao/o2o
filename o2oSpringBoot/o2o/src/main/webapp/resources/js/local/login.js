@@ -20,7 +20,7 @@ $(function() {
 		if (loginCount >= 3) {
 			// 那么就需要验证码校验了
 			if (!verifyCodeActual) {
-				$.toast('请输入验证码！');
+				$.toast('Please input code！');
 				return;
 			} else {
 				needVerify = true;
@@ -42,7 +42,7 @@ $(function() {
 			},
 			success : function(data) {
 				if (data.success) {
-					$.toast('登录成功！');
+					$.toast('Login succesfully！');
 					if (usertype == 1) {
 						// 若用户在前端展示系统页面则自动链接到前端展示系统首页
 						window.location.href = '/o2o/frontend/index';
@@ -51,7 +51,7 @@ $(function() {
 						window.location.href = '/o2o/shopadmin/shoplist';
 					}
 				} else {
-					$.toast('登录失败！' + data.errMsg);
+					$.toast('Login unsuccesfully！' + data.errMsg);
 					loginCount++;
 					if (loginCount >= 3) {
 						// 登录失败三次，需要做验证码校验

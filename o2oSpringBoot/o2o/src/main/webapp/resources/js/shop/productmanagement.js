@@ -19,11 +19,11 @@ $(function() {
 				// 商品名称，优先级，上架\下架(含productId)，编辑按钮(含productId)
 				// 预览(含productId)
 				productList.map(function(item, index) {
-					var textOp = "下架";
+					var textOp = "Off";
 					var contraryStatus = 0;
 					if (item.enableStatus == 0) {
 						// 若状态值为0，表明是已下架的商品，操作变为上架(即点击上架按钮上架相关商品)
-						textOp = "上架";
+						textOp = "On";
 						contraryStatus = 1;
 					} else {
 						contraryStatus = 0;
@@ -41,7 +41,7 @@ $(function() {
 							+ item.productId
 							+ '" data-status="'
 							+ item.enableStatus
-							+ '">编辑</a>'
+							+ '">Edit</a>'
 							+ '<a href="#" class="status" data-id="'
 							+ item.productId
 							+ '" data-status="'
@@ -53,7 +53,7 @@ $(function() {
 							+ item.productId
 							+ '" data-status="'
 							+ item.enableStatus
-							+ '">预览</a>'
+							+ '">Preview</a>'
 							+ '</div>'
 							+ '</div>';
 				});
@@ -88,7 +88,7 @@ $(function() {
 		var product = {};
 		product.productId = id;
 		product.enableStatus = enableStatus;
-		$.confirm('确定么?', function() {
+		$.confirm('Confirm change?', function() {
 			// 上下架相关商品
 			$.ajax({
 				url : statusUrl,
@@ -100,10 +100,10 @@ $(function() {
 				dataType : 'json',
 				success : function(data) {
 					if (data.success) {
-						$.toast('操作成功！');
+						$.toast('Success！');
 						getList();
 					} else {
-						$.toast('操作失败！');
+						$.toast('Unsuccess！');
 					}
 				}
 			});

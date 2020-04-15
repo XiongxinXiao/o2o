@@ -13,7 +13,7 @@ $(function() {
 		var newPassword = $('#newPassword').val();
 		var confirmPassword = $('#confirmPassword').val();
 		if (newPassword != confirmPassword) {
-			$.toast('两次输入的新密码不一致！');
+			$.toast('Passwords you input are not matched！');
 			return;
 		}
 		// 添加表单数据
@@ -24,7 +24,7 @@ $(function() {
 		// 获取验证码
 		var verifyCodeActual = $('#j_captcha').val();
 		if (!verifyCodeActual) {
-			$.toast('请输入验证码！');
+			$.toast('Please input verify code！');
 			return;
 		}
 		formData.append("verifyCodeActual", verifyCodeActual);
@@ -38,7 +38,7 @@ $(function() {
 			cache : false,
 			success : function(data) {
 				if (data.success) {
-					$.toast('提交成功！');
+					$.toast('submit succesfully！');
 					if (usertype == 1) {
 						// 若用户在前端展示系统页面则自动退回到前端展示系统首页
 						window.location.href = '/o2o/frontend/index';
@@ -47,7 +47,7 @@ $(function() {
 						window.location.href = '/o2o/shopadmin/shoplist';
 					}
 				} else {
-					$.toast('提交失败！' + data.errMsg);
+					$.toast('submit unsuccesfully！' + data.errMsg);
 					$('#captcha_img').click();
 				}
 			}

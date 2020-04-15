@@ -121,7 +121,7 @@ $(function() {
 				// 获取表单里输入的验证码
 				var verifyCodeActual = $('#j_captcha').val();
 				if (!verifyCodeActual) {
-					$.toast('请输入验证码！');
+					$.toast('Please input verify code！');
 					return;
 				}
 				formData.append("verifyCodeActual", verifyCodeActual);
@@ -135,10 +135,10 @@ $(function() {
 					cache : false,
 					success : function(data) {
 						if (data.success) {
-							$.toast('提交成功！');
+							$.toast('Success！');
 							$('#captcha_img').click();
 						} else {
-							$.toast('提交失败！');
+							$.toast('Unsuccess！');
 							$('#captcha_img').click();
 						}
 					}

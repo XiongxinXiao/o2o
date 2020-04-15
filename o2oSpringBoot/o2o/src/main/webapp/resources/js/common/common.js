@@ -39,5 +39,5 @@ function getQueryString(name) {
 }
 
 function getContextPath() {
-	return "/o2o/"
+	return "/o2o"
 }
