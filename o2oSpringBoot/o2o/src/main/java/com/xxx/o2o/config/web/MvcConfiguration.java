@@ -43,7 +43,8 @@ public class MvcConfiguration implements WebMvcConfigurer, ApplicationContextAwa
 
 	/**
 	 * 静态资源配置
-	 * 
+	 * dev: /Users/xiongxinxiao/appImg/upload/
+	 * prd: /appImg/upload/
 	 * @param registry
 	 */
 	@Override

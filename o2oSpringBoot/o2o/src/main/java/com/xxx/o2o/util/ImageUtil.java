@@ -66,7 +66,7 @@ public class ImageUtil {
 		// 调用Thumbnails生成带有水印的图片
 		try {
 			Thumbnails.of(thumbnail.getImage()).size(200, 200)
-					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/xiongxinxiao/o2oSpringBoot/o2o/src/main/resources/watermark.jpg")), 0.25f)
+					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 					.outputQuality(0.8f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
@@ -143,12 +143,6 @@ public class ImageUtil {
 		int rannum = r.nextInt(89999) + 10000;
 		String nowTimeStr = sDateFormat.format(new Date());
 		return nowTimeStr + rannum;
-	}
-
-	public static void main(String[] args) throws IOException {
-		Thumbnails.of(new File("/Users/baidu/work/image/xiaohuangren.jpg")).size(200, 200)
-				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
-				.outputQuality(0.8f).toFile("/Users/baidu/work/image/xiaohuangrennew.jpg");
 	}
 
 	/**
