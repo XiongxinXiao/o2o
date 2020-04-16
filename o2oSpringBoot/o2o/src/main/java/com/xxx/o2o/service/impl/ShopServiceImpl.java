@@ -39,7 +39,7 @@ public class ShopServiceImpl implements ShopService {
 			// 添加店铺信息
 			int effectedNum = shopDao.insertShop(shop);
 			if (effectedNum <= 0) {
-				throw new ShopOperationException("店铺创建失败");
+				throw new ShopOperationException("Shop been added unsuccessfully");
 			} else {
 				if (thumbnail.getImage() != null) {
 					// 存储图片
@@ -51,7 +51,7 @@ public class ShopServiceImpl implements ShopService {
 					// 更新店铺的图片地址
 					effectedNum = shopDao.updateShop(shop);
 					if (effectedNum <= 0) {
-						throw new ShopOperationException("更新图片地址失败");
+						throw new ShopOperationException("Image been updated unsuccessfully");
 					}
 				}
 			}

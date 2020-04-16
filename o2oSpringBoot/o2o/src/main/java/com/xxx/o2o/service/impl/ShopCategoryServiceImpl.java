@@ -122,7 +122,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 					return new ShopCategoryExecution(ShopCategoryStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new ShopCategoryOperationException("添加店铺类别信息失败:" + e.toString());
+				throw new ShopCategoryOperationException("Shop category been added unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new ShopCategoryExecution(ShopCategoryStateEnum.EMPTY);
@@ -157,7 +157,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 					return new ShopCategoryExecution(ShopCategoryStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new ShopCategoryOperationException("更新店铺类别信息失败:" + e.toString());
+				throw new ShopCategoryOperationException("Shop category been updated unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new ShopCategoryExecution(ShopCategoryStateEnum.EMPTY);

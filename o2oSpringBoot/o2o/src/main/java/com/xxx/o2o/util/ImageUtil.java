@@ -70,7 +70,7 @@ public class ImageUtil {
 					.outputQuality(0.8f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
-			throw new RuntimeException("创建缩略图失败：" + e.toString());
+			throw new RuntimeException("Thumbnail been created unsuccessfully：" + e.toString());
 		}
 		// 返回图片相对路径地址
 		return relativeAddr;
@@ -103,7 +103,7 @@ public class ImageUtil {
 					.outputQuality(0.9f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
-			throw new RuntimeException("创建缩图片失败：" + e.toString());
+			throw new RuntimeException("Detail image been created unsuccessfully：" + e.toString());
 		}
 		// 返回图片相对路径地址
 		return relativeAddr;

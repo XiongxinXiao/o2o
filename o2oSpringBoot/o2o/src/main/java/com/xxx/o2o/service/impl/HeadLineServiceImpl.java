@@ -113,7 +113,7 @@ public class HeadLineServiceImpl implements HeadLineService {
 					return new HeadLineExecution(HeadLineStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new HeadLineOperationException("添加区域信息失败:" + e.toString());
+				throw new HeadLineOperationException("Headline been added unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new HeadLineExecution(HeadLineStateEnum.EMPTY);
@@ -147,7 +147,7 @@ public class HeadLineServiceImpl implements HeadLineService {
 					return new HeadLineExecution(HeadLineStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new HeadLineOperationException("更新头条信息失败:" + e.toString());
+				throw new HeadLineOperationException("Headline been updated unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new HeadLineExecution(HeadLineStateEnum.EMPTY);
@@ -175,7 +175,7 @@ public class HeadLineServiceImpl implements HeadLineService {
 					return new HeadLineExecution(HeadLineStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new HeadLineOperationException("删除头条信息失败:" + e.toString());
+				throw new HeadLineOperationException("Headline been deleted unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new HeadLineExecution(HeadLineStateEnum.EMPTY);
@@ -205,7 +205,7 @@ public class HeadLineServiceImpl implements HeadLineService {
 					return new HeadLineExecution(HeadLineStateEnum.INNER_ERROR);
 				}
 			} catch (Exception e) {
-				throw new HeadLineOperationException("删除头条信息失败:" + e.toString());
+				throw new HeadLineOperationException("Headline been deleted unsuccessfully:" + e.toString());
 			}
 		} else {
 			return new HeadLineExecution(HeadLineStateEnum.EMPTY);
