@@ -103,7 +103,7 @@ $(function() {
 						$.toast('Success！');
 						getList();
 					} else {
-						$.toast('Unsuccess！');
+						$.toast('Unsuccess！' + data.errMsg);
 					}
 				}
 			});

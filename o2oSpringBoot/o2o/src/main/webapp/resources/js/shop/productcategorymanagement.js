@@ -62,7 +62,7 @@ $(function() {
 					$.toast('Submit successfully！');
 					getList();
 				} else {
-					$.toast('Submit unsuccessfully！');
+					$.toast('Submit unsuccessfully！' + data.errMsg);
 				}
 			}
 		});
@@ -90,7 +90,7 @@ $(function() {
 								$.toast('Success！');
 								getList();
 							} else {
-								$.toast('Unsuccess！');
+								$.toast('Unsuccess！' + data.errMsg);
 							}
 						}
 					});

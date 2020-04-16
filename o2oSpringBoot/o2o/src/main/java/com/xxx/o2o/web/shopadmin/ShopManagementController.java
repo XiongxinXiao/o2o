@@ -192,7 +192,7 @@ public class ShopManagementController {
 			return modelMap;
 		} else {
 			modelMap.put("success", false);
-			modelMap.put("errMsg", "Please input shop info");
+			modelMap.put("errMsg", "Shop info is missing");
 			return modelMap;
 		}
 	}

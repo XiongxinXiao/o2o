@@ -138,7 +138,7 @@ $(function() {
 							$.toast('Success！');
 							$('#captcha_img').click();
 						} else {
-							$.toast('Unsuccess！');
+							$.toast('Unsuccess！' + data.errMsg);
 							$('#captcha_img').click();
 						}
 					}
